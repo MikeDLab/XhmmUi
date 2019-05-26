@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="column">
+      <div><label>Path to GATK:</label>
+        <input type="text" [(ngModel)]="pathGATK"></div>
+        <div>
+                <label>Path to BamList:</label>
+                <input type="text" [(ngModel)]="pathBamList">
+        </div>
+        <div>
+                <label>Path to Reference Directory:</label>
+                <input type="text" [(ngModel)]="pathRefDirectory">
+        </div>
+        
+  </div>
+  <div class="column">
+        <div>
+                <label>Path to Exome List:</label>
+                <input type="text" [(ngModel)]="pathExomeList">
+        </div>
+      <div>
+          <label>Path to Param:</label>
+          <input type="text" [(ngModel)]="pathParam">
+      </div>
+      <div>
+          <label>Path to Output: </label>
+          <input type="text" [(ngModel)]="pathOutput">
+      </div>
+    </div>
+    <div class="column">
+            <div>
+                    <label>Author:</label>
+                    <input type="text" [(ngModel)]="author">
+            </div>
+          <div>
+              <label>Output Email:</label>
+              <input type="email" [(ngModel)]="outputEmail">
+          </div>
+    </div>
+</div>
+    <div class="row">
+        <div><label>User Name: </label>
+            <input type="text" [(ngModel)]="userName" required></div>  
+        <div> <label>User Password: </label>
+            <input type="password" [(ngModel)]="userPassword" required></div>
+    </div>
+    <div class="row">
+            <button (click)="func()">Send request</button>
+            <button (click)="resp()">Trye</button>
+    </div>
+    {{message}}
+       
+       
+   
+
+
