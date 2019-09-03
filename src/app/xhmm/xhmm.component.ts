@@ -43,7 +43,7 @@ export class XhmmComponent implements OnInit {
     else
     {
       const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.userName + ':' + this.userPassword) });
-      this.http.post<Message>('http://localhost:8099/xhmm',{
+      this.http.post<Message>('http://193.176.181.150:8099/xhmm',{
         pathGATK:this.pathGATK,
         pathBamList: this.pathBamList,
         pathRefDirectory: this.pathRefDirectory,
@@ -81,9 +81,8 @@ export class XhmmComponent implements OnInit {
     else
     {
       const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.userName + ':' + this.userPassword) });
-      this.http.get<Message>('http://localhost:8099/response',{headers,observe:'response'}).subscribe(
+      this.http.get<Message>('http://193.176.181.150:8099/response',{headers,observe:'response'}).subscribe(
         (httpResponse:HttpResponse<Message>) =>{
-         console.log("TEST SATAU");
           this.messageOutput = httpResponse.body;
             this.router.navigate(['/output'], { queryParams: { message: JSON.stringify(this.messageOutput)} });
         },
@@ -104,5 +103,4 @@ export class XhmmComponent implements OnInit {
 export class Message
 {
   message: string;
-
 }
