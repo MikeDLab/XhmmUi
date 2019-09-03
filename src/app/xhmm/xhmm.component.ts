@@ -33,17 +33,6 @@ export class XhmmComponent implements OnInit {
   }
   func()
   {
-    // this.http.post('http://localhost:8099/xhmm',
-    // {
-    //   pathGATK:this.pathGATK,
-    //   pathBamList: this.pathBamList,
-    //   pathRefDirectory: this.pathRefDirectory,
-    //   pathExomeList: this.pathExomeList,
-    //   pathParam: this.pathParam,
-    //   pathOutput:this.pathOutput
-    // }
-    // ).subscribe();
-
     this.message=null;
     console.log(this.userName)
     console.log(this.userPassword)
@@ -65,7 +54,6 @@ export class XhmmComponent implements OnInit {
         author:this.author
       },{headers,observe:'response'}).subscribe(
         (httpResponse:HttpResponse<Message>) =>{
-         console.log("TEST SATAU");
           this.messageOutput = httpResponse.body;
             this.router.navigate(['/output'], { queryParams: { message: JSON.stringify(this.messageOutput)} });
         },
@@ -103,7 +91,7 @@ export class XhmmComponent implements OnInit {
         {
           if(error.status==401)
           {
-            this.message="Ivalid login or password";
+            this.message="Invalid login or passwohrd";
           }
         }
          )
